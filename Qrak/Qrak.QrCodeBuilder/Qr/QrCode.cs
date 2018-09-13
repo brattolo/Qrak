@@ -27,9 +27,9 @@ namespace Qrak.QrCodeBuilder.Qr
 
         public QrCodeBlock[,] Create()
         {
-            for (int x = 0; x < this.Version.AmountOfRowsAsIndex; x++)
+            for (int x = 0; x <= this.Version.AmountOfRowsAsIndex; x++)
             {
-                for (int y = 0; y < this.Version.AmountOfColumnsAsIndex; y++)
+                for (int y = 0; y <= this.Version.AmountOfColumnsAsIndex; y++)
                 {
                     this.Blocks[x, y] = new QrCodeBlock(x, y);
                 }
