@@ -3,9 +3,37 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2026
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{29B1691D-B3C4-41C7-9169-BBD468BCF41D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{3286237F-6717-4BDC-B89B-127BD52D31FD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{34F7DEB5-DB9B-4B80-9811-0CA713E22F1E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "artifacts", "artifacts", "{1F5DCF8F-6F33-4547-8940-841A38719FA0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8E848313-89B0-4998-B24C-8FF64C5C36BC}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qrak.QrCodeBuilder", "Qrak.QrCodeBuilder\Qrak.QrCodeBuilder.csproj", "{740F740D-91FD-4030-9A60-1EBD4298382D}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{740F740D-91FD-4030-9A60-1EBD4298382D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{740F740D-91FD-4030-9A60-1EBD4298382D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{740F740D-91FD-4030-9A60-1EBD4298382D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{740F740D-91FD-4030-9A60-1EBD4298382D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{740F740D-91FD-4030-9A60-1EBD4298382D} = {29B1691D-B3C4-41C7-9169-BBD468BCF41D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6E8EDF21-AD3B-495F-B039-437A4FE5C14E}
