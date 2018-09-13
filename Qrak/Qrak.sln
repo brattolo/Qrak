@@ -10,6 +10,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{34F7DEB5-DB9B-4B80-9811-0CA713E22F1E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "artifacts", "artifacts", "{1F5DCF8F-6F33-4547-8940-841A38719FA0}"
+	ProjectSection(SolutionItems) = preProject
+		Qrak.QrCodeBuilder\bin\Debug\netcoreapp2.1\output\qrCode.png = Qrak.QrCodeBuilder\bin\Debug\netcoreapp2.1\output\qrCode.png
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8E848313-89B0-4998-B24C-8FF64C5C36BC}"
 	ProjectSection(SolutionItems) = preProject
