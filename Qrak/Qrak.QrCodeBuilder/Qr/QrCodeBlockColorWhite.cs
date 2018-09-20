@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace Qrak.QrCodeBuilder.Qr
 {
-    public static class QrCodeConstants
+    public class QrCodeBlockColorWhite : QrCodeBlockBaseColor
     {
-        public static int BaseSizeInPixels { get; } = 18;
-
-        public static int AmountOfPaddingBlocks { get; } = 3;
-
+        public QrCodeBlockColorWhite() : base(255, 255, 255)
+        {
+        }
     }
 }

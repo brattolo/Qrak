@@ -11,10 +11,20 @@ namespace Qrak.QrCodeBuilder.Qr
         public QrCodeBlock(int x, int y)
         {
             this.Position = new QrCodeBlockPosition(x, y);
-            this.Color = new QrCodeBlockColor();
+            this.Color = new QrCodeBlockColorGrey();
         }
 
-        public QrCodeBlockPosition Position { get; private set; }
-        public QrCodeBlockColor Color { get; private set; }
+        public QrCodeBlockPosition Position { get; }
+        public QrCodeBlockBaseColor Color { get; private set; } = new QrCodeBlockColorGrey();
+
+        public void Black()
+        {
+            this.Color = new QrCodeBlockColorBlack();
+        }
+
+        public void White()
+        {
+            this.Color = new QrCodeBlockColorWhite();
+        }
     }
 }

@@ -20,14 +20,10 @@ namespace Qrak.QrCodeBuilder.Qr
 
             int size = baseSize + blocksAddedPerVersion * version;
 
-            this.AmountOfColumns = size;
-            this.AmountOfRows = size;
             this.AmountOfColumnsAsIndex = size - 1;
             this.AmountOfRowsAsIndex = size - 1;
-        }
 
-        public int AmountOfColumns { get; private set; }
-        public int AmountOfRows { get; private set; }
+        }
 
         public int AmountOfColumnsAsIndex { get; private set; }
         public int AmountOfRowsAsIndex { get; private set; }

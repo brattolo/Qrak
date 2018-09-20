@@ -12,30 +12,46 @@ namespace Qrak.QrCodeBuilder.Qr
         {
             this.Version = new QrCodeVersion(version: 1);
 
-            this.WidthInPixels = this.Version.AmountOfColumns * QrCodeConstants.BaseSizeInPixels;
-            this.HeightInPixels = this.Version.AmountOfRows * QrCodeConstants.BaseSizeInPixels;
+            this.xMaxBlocks = this.Version.AmountOfRowsAsIndex + QrCodeConstants.AmountOfPaddingBlocks;
+            this.yMaxBlocks = this.Version.AmountOfColumnsAsIndex + QrCodeConstants.AmountOfPaddingBlocks;
 
-            this.Blocks = new QrCodeBlock[this.Version.AmountOfRows, this.Version.AmountOfColumns];
+            this.WidthInPixels = this.xMaxBlocks * QrCodeConstants.BaseSizeInPixels;
+            this.HeightInPixels = this.yMaxBlocks * QrCodeConstants.BaseSizeInPixels;
         }
 
         public int WidthInPixels { get; private set; }
         public int HeightInPixels { get; private set; }
 
-        public QrCodeVersion Version { get; private set; }
+        public int xMaxBlocks { get; private set; }
+        public int yMaxBlocks { get; private set; }
 
-        public QrCodeBlock[,] Blocks { get; private set; }
+        public QrCodeVersion Version { get; private set; }
 
         public QrCodeBlock[,] Create()
         {
-            for (int x = 0; x <= this.Version.AmountOfRowsAsIndex; x++)
+            QrCodeBlock[,] blocks = GetBlocks();
+
+            var creator = new QrCodeCreator();
+            creator.Build(ref blocks);
+
+            return blocks;
+        }
+
+        private QrCodeBlock[,] GetBlocks()
+        {
+         
+
+            QrCodeBlock[,] blocks = new QrCodeBlock[this.xMaxBlocks, this.yMaxBlocks];
+
+            for (int x = 0; x < this.xMaxBlocks; x++)
             {
-                for (int y = 0; y <= this.Version.AmountOfColumnsAsIndex; y++)
+                for (int y = 0; y < this.yMaxBlocks; y++)
                 {
-                    this.Blocks[x, y] = new QrCodeBlock(x, y);
+                    blocks[x, y] = new QrCodeBlock(x, y);
                 }
             }
 
-            return this.Blocks;
+            return blocks;
         }
     }
 }
